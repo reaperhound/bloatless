@@ -15,8 +15,14 @@ async function readPackageJson() {
 
 function extractDeps(pkgJsonData) {
   let { dependencies: deps, devDependencies: devDeps } = pkgJsonData;
-  [deps, devDeps] = [deps, devDeps].map((item) => Object.keys(item));
+  deps = deps ? Object.keys(deps) : [];
+  devDeps = devDeps ? Object.keys(devDeps) : [];
   console.log({ deps, devDeps });
 }
 
+function searchImportAndExports() {
+  console.log("----------Crawling--Directories-----------");
+}
+
 readPackageJson();
+searchImportAndExports();
