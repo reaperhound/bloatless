@@ -20,9 +20,11 @@ function extractDeps(pkgJsonData) {
   console.log({ deps, devDeps });
 }
 
-function searchImportAndExports() {
+async function searchImportAndExports(path) {
   console.log("----------Crawling--Directories-----------");
+  let fileContent = await fs.readFile(path, "utf8");
+  console.log(fileContent);
 }
 
 readPackageJson();
-searchImportAndExports();
+searchImportAndExports(path.join(projectRoot, "index.js"));
