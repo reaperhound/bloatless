@@ -23,7 +23,7 @@ function extractDeps(pkgJsonData) {
 
 async function crawlDir(path) {
   console.log("----------Crawling--Directories-----------");
-  const files = await glob(["*.js", "src/**/*.js"]);
+  const files = await glob(["./**/*.js"], { ignore: ["node_modules"] });
   console.log(files);
 }
 
