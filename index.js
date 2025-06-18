@@ -21,11 +21,11 @@ function extractDeps(pkgJsonData) {
   console.log({ deps, devDeps });
 }
 
-async function searchImportAndExports(path) {
+async function crawlDir(path) {
   console.log("----------Crawling--Directories-----------");
   const files = await glob(["*.js", "src/**/*.js"]);
   console.log(files);
 }
 
 readPackageJson();
-searchImportAndExports(path.join(projectRoot, "index.js"));
+crawlDir(path.join(projectRoot, "index.js"));
