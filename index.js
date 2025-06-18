@@ -2,6 +2,7 @@
 
 const fs = require("fs").promises;
 const path = require("path");
+const glob = require("fast-glob");
 
 const projectRoot = process.cwd();
 
@@ -22,8 +23,8 @@ function extractDeps(pkgJsonData) {
 
 async function searchImportAndExports(path) {
   console.log("----------Crawling--Directories-----------");
-  let fileContent = await fs.readFile(path, "utf8");
-  console.log(fileContent);
+  const files = await glob(["*.js", "src/**/*.js"]);
+  console.log(files);
 }
 
 readPackageJson();

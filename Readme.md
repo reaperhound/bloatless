@@ -6,6 +6,8 @@ Build a CLI tool that:
 
     Reports and optionally removes unused code
 
+    Packages used how many times
+
 Get all relevant files recursively.
 
 Read their contents.
